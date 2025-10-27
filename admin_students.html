@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="screen flex justify-left flex-wrap w-screen h-screen bg-[#FFFFFF] ">
+        
+<div class="l_box w-[300px] h-full bg-[#83CBFC] pt-2 relative">
+            
+         <aside id="logo-sidebar" class="fixed top-12 left-0 z-40 w-[300px] transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+   <div class="h-full px-3 py-4 overflow-y-auto relative">
+      <a href="https://flowbite.com/" class="flex justify-center items-center  mb-5">
+         <img src="images/educore_clear.png" class="w-[100px]" alt="Flowbite Logo" />
+      </a>
+      <ul class="space-y-1 font-medium pt-4">
+         <li>
+            <a href="#" class="flex items-center p-2  rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <img src="images/dash_logo.svg" alt="Dashboard Icon" class="w-5 h-5 text-gray-500 group-hover:text-gray-900" />
+               <span class="ms-3">DASHBOARD</span>
+            </a>
+         </li>
+         <li>
+            <a href="#" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <img src="images/stud_logo.svg" alt="Dashboard Icon" class="w-4 h-4 text-gray-500 group-hover:text-gray-900" />
+               <span class="flex-1 ms-3 whitespace-nowrap">STUDENTS</span>
+            </a>
+         </li>
+      </ul>
+   </div>
+         </aside>
+       <div class="absolute bottom-4 left-4">
+        <a href="#" class="flex items-center p-2 font-medium dark:text-white rounded-lg group">
+          <img src="images/power-off.svg" alt="Logout Icon" class="w-5 h-5" />
+          <span class="ms-3">LOGOUT</span>
+        </a>
+      </div>
+</div>
+
+        <div class="r_box flex-1 h-full relative">
+<div class="flex flex-row items-center justify-end navbar w-full h-[70px] shadow-sm px-4">
+       <div class="search_bar w-[350px] h-[50px] mr-[60px] pt-2">
+                  
+            <form class="max-w-md mx-auto">   
+               <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
+                  Search
+               </label>
+               <div class="relative">
+                  <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none mt-0.5">
+                     <svg class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                     </svg>
+                  </div>
+                  <input
+                     type="search"
+                     id="default-search"
+                     class="block h-[36px] w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 
+                           rounded-full focus:ring-blue-500 focus:border-blue-500
+                           bg-[#F5F6FA] dark:border-[#D5D5D5] dark:placeholder-gray-400 dark:text-gray-600"
+                     placeholder="Search"
+                     required
+                  />
+               </div>
+            </form>
+
+
+               </div>
+               <div class="notify w-[50px] h-[50px] mr-[20px] flex items-center justify-center mt-1">
+                  <button
+                     type="button"
+                     class="relative inline-flex items-center justify-center text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+                  >
+                     <img
+                        src="images/bell1.svg"
+                        alt="Notifications"
+                        class="w-[30px] h-[30px]"
+                     />
+                     <div
+                        class="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-1 -right-1 dark:border-gray-900"
+                     >
+                        8
+                     </div>
+                  </button>
+            </div>
+
+               <div class="profile w-[110px] h-[50px] flex items-center justify-center relative">
+                  <button
+                     id="dropdownUserAvatarButton"
+                     data-dropdown-toggle="dropdownAvatar"
+                     class="flex items-center justify-center text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                     type="button"
+                  >
+                     <span class="sr-only">Open user menu</span>
+                     <img
+                        class="w-8 h-8 rounded-full object-cover"
+                        src="images/prof.jpg"
+                        alt="user photo"
+                     />
+                  </button>
+
+                  <!-- Dropdown menu -->
+                  <div
+                     id="dropdownAvatar"
+                     class="absolute top-[60px] right-0 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600"
+                  >
+                     <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                        <div>Frank Roy</div>
+                        <div class="font-medium truncate">frank@gmail.com</div>
+                     </div>
+                     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
+                        <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                        </li>
+                        <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                        </li>
+                        <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                        </li>
+                     </ul>
+                     <div class="py-2">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                     </div>
+                  </div>
+                  <div class="prof_name ml-2 leading-[1rem]">
+                     <span class="text-[12px] text-gray-600 font-medium block">Frank Roy</span>
+                     <span class="text-[10px] text-gray-600 block">Admin</span>
+                  </div>
+
+               </div>
+
+       </div>
+
+<div class="student_table w-full h-[570px] mt-2 px-5 py-2">             
+
+<div class="relative overflow-x-auto shadow-[0_0_8px_rgba(0,0,0,0.1)] sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <caption class="p-5 text-[20px] font-bold text-left rtl:text-right text-gray-900 bg-white dark:text-[#2687C9]">
+            STUDENTS
+        </caption>
+      <thead class="text-xs uppercase bg-[#F5F5F5]/40 dark:bg-[#D9D9D9]/80 dark:text-black">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    ID
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Address
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    NIC
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Mobile
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    District
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    <span class="sr-only">Edit</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b">
+                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                    001
+                </th>
+                <td class="px-6 py-4">
+                    Budditha Hettige
+                </td>
+                <td class="px-6 py-4">
+                    123, Lions Road, Nugegoda
+                </td>
+                <td class="px-6 py-4">
+                    1009078676V
+                </td>
+                <td class="px-6 py-4">
+                    0711233465
+                </td>
+                <td class="px-6 py-4">
+                    Colombo
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+            <tr class="bg-white border-b">
+                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                    001
+                </th>
+                <td class="px-6 py-4">
+                    Budditha Hettige
+                </td>
+                <td class="px-6 py-4">
+                    123, Lions Road, Nugegoda
+                </td>
+                <td class="px-6 py-4">
+                    1009078676V
+                </td>
+                <td class="px-6 py-4">
+                    0711233465
+                </td>
+                <td class="px-6 py-4">
+                    Colombo
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                    001
+                </th>
+                <td class="px-6 py-4">
+                    Budditha Hettige
+                </td>
+                <td class="px-6 py-4">
+                    123, Lions Road, Nugegoda
+                </td>
+                <td class="px-6 py-4">
+                    1009078676V
+                </td>
+                <td class="px-6 py-4">
+                    0711233465
+                </td>
+                <td class="px-6 py-4">
+                    Colombo
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+            </div>
+<div class="page_num w-[200px] h-[60px]  mt-2 absolute bottom-4 right-4">
+   <div class="flex justify-center items-center space-x-2 mt-3">
+
+            <button class="px-3 rounded text-[25px] hover:bg-gray-100 mb-2">
+               ‹
+            </button>
+
+
+            <button class="px-3 py-1 border border-bg-[#2687C9] text-blue-600  bg-blue-50">1</button>
+            <button class="px-3 py-1 border border-bg-[#2687C9] hover:bg-gray-100">2</button>
+            <button class="px-3 py-1 borderborder-bg-[#2687C9] hover:bg-gray-100">3</button>
+
+
+            <button class="px-3 rounded text-[25px] hover:bg-gray-100 mb-2">
+               ›
+            </button>
+
+  </div>
+
+</div>
+        </div>
+    </div>
+</body>
+</html>
+
