@@ -14,10 +14,10 @@
 
 <div class=" flex flex-col justify-between items-center w-[450px] h-full bg-[#DBF1FF] pt-4">
     <div class="logo w-[130px] h-[130px]  ">
-        <img src="images/EduCore.png" alt="My Image" class="w-[400px] h-full object-contain" />
+        <img src="{{ url_for('static', filename='images/EduCore.png') }}" alt="My Image" class="w-[400px] h-full object-contain" /  >
     </div>
     <div class="image w-[400px]  flex justify-center items-end">
-        <img src="images/lapgirl.png" alt="My Image" class="w-[700px] h-auto  object-contain" />
+        <img src="{{ url_for('static', filename='images/lapgirl.png') }}" alt="My Image" class="w-[700px] h-auto  object-contain" />
     </div>
 </div>
 <div class="flex-1 h-full  py-2 px-5">
@@ -27,40 +27,40 @@
     </div>
     <div class="info">
         
-<form>
+<form action="{{url_for('add_student')}}" method="POST">
     <div class="grid gap-6 mb-6 md:grid-cols-2 pt-7">
       <!-- First / Last Name -->
     <input type="text" placeholder="First Name"
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="fname" required />
 
     <input type="text" placeholder="Last Name"
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="lname"  required />
 
     <!-- NIC / Mobile -->
     <input type="text" placeholder="NIC"
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" />
+             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" name="nic" />
 
     <input type="text" placeholder="Mobile"
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" />
+             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" name="mobile"/>
 
     <!-- Address Line 1 (full width) -->
     <input type="text" placeholder="Address Line 1"
       class="md:col-span-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" />
+             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" name="address1" />
 
     <!-- Address Line 2 (full width) -->
     <input type="text" placeholder="Address Line 2"
       class="md:col-span-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" />
+             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" name="address2" />
 
     <!-- District (half width on md+) -->
     <input type="text" placeholder="District"
       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" />
+             focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-2" name="district" />
     </div>
     <div class="mb-2 mt-8 h-[150px] pt-8">
     <button type="submit" class=" text-white bg-[#2687C9] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[16px] w-full sm:w-[180px] px-5 py-2.5 text-center dark:bg-[#2687C9] dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save and continue</button>
