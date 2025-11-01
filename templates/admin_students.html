@@ -141,106 +141,85 @@
 <div class="student_table w-full h-[570px] mt-2 px-5 py-2">             
 
 <div class="relative overflow-x-auto shadow-[0_0_8px_rgba(0,0,0,0.1)] sm:rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <caption class="p-5 text-[20px] font-bold text-left rtl:text-right text-gray-900 bg-white dark:text-[#2687C9]">
-            STUDENTS
-        </caption>
-      <thead class="text-xs uppercase bg-[#F5F5F5]/40 dark:bg-[#D9D9D9]/80 dark:text-black">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    ID
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Address
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    NIC
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Mobile
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    District
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    <span class="sr-only">Edit</span>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bg-white border-b">
+<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <caption class="p-5 text-[20px] font-bold text-left rtl:text-right text-gray-900 bg-white dark:text-[#2687C9]">
+        STUDENTS
+    </caption>
+    <thead class="text-xs uppercase bg-[#F5F5F5]/40 dark:bg-[#D9D9D9]/80 dark:text-black">
+        <tr>
+            <th scope="col" class="px-6 py-3">ID</th>
+            <th scope="col" class="px-6 py-3">Name</th>
+            <th scope="col" class="px-6 py-3">Address</th>
+            <th scope="col" class="px-6 py-3">NIC</th>
+            <th scope="col" class="px-6 py-3">Mobile</th>
+            <th scope="col" class="px-6 py-3">District</th>
+            <th scope="col" class="px-6 py-3"><span class="sr-only">Edit</span></th>
+        </tr>
+    </thead>
+
+    <tbody id="students-body">
+        <!-- Dynamic rows will be inserted here -->
+    </tbody>
+</table>
+
+<script>
+async function loadStudents() {
+    try {
+        const res = await fetch('/api/students');
+        const data = await res.json();
+
+        const tbody = document.getElementById('students-body');
+        tbody.innerHTML = ''; // clear previous rows
+
+        if (!Array.isArray(data) || data.length === 0) {
+            tbody.innerHTML = `
+                <tr class="bg-white border-b">
+                    <td colspan="7" class="px-6 py-4 text-center text-gray-500">
+                        No students found
+                    </td>
+                </tr>`;
+            return;
+        }
+
+        data.forEach(std => {
+            const tr = document.createElement('tr');
+            tr.className = "bg-white border-b";
+
+            tr.innerHTML = `
                 <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                    001
+                    ${std.id ?? ""}
                 </th>
                 <td class="px-6 py-4">
-                    Budditha Hettige
+                    ${std.first_name ?? ""}
                 </td>
                 <td class="px-6 py-4">
-                    123, Lions Road, Nugegoda
+                    ${std.address1 ?? ""}
                 </td>
                 <td class="px-6 py-4">
-                    1009078676V
+                    ${std.nic ?? ""}
                 </td>
                 <td class="px-6 py-4">
-                    0711233465
+                    ${std.mobile ?? ""}
                 </td>
                 <td class="px-6 py-4">
-                    Colombo
+                    ${std.district ?? ""}
                 </td>
                 <td class="px-6 py-4 text-right">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                 </td>
-            </tr>
-            <tr class="bg-white border-b">
-                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                    001
-                </th>
-                <td class="px-6 py-4">
-                    Budditha Hettige
-                </td>
-                <td class="px-6 py-4">
-                    123, Lions Road, Nugegoda
-                </td>
-                <td class="px-6 py-4">
-                    1009078676V
-                </td>
-                <td class="px-6 py-4">
-                    0711233465
-                </td>
-                <td class="px-6 py-4">
-                    Colombo
-                </td>
-                <td class="px-6 py-4 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                    001
-                </th>
-                <td class="px-6 py-4">
-                    Budditha Hettige
-                </td>
-                <td class="px-6 py-4">
-                    123, Lions Road, Nugegoda
-                </td>
-                <td class="px-6 py-4">
-                    1009078676V
-                </td>
-                <td class="px-6 py-4">
-                    0711233465
-                </td>
-                <td class="px-6 py-4">
-                    Colombo
-                </td>
-                <td class="px-6 py-4 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            `;
+
+            tbody.appendChild(tr);
+        });
+    } catch (err) {
+        console.error("❌ Error fetching /api/students:", err);
+    }
+}
+
+// Load table as soon as the page opens
+loadStudents();
+</script>
+
 </div>
 
             </div>
